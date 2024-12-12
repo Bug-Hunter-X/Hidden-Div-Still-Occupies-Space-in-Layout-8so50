@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = ""; // Clears the div content
+      document.getElementById("myDiv").style.display = "none"; // Hides the div
+      //Bug: The div is hidden but it still takes up space in the layout
+      //Solution: Use display: none; for hiding
+    }
+  </script>
+</body>
+</html>
